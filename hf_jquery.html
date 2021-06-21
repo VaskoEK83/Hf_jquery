@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <title>Document</title>
+
+    <style>
+        
+        .nav-inner {
+            display: none;
+            flex-direction: column;
+        }
+
+        .opened{
+            display: flex;
+            flex-direction: column;
+        }
+
+        #hamburger {
+            border: 2px solid blue;
+            border-radius: 5px;
+            height: 25px;
+            width: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #hamburger div {
+            margin: 2px;
+            border: 2px solid blue;
+            width: 30px;
+        }
+
+        @media only screen and (min-width: 576px) {
+            
+            #menu-inner {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+            }
+
+            #hamburger {
+                display: none;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <nav>
+        <div id="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div id="menu-inner" class="nav-inner q w e r t">
+            <a href="#">Kezdőlap</a>
+            <a href="#">Galéria</a>
+            <a href="#">Menü</a>
+            <a href="#">Asztalfoglalás</a>
+            <a href="#">Elérhetőség</a>
+        </div>
+    </nav>
+
+    <script>
+
+        //let gomb = document.getElementById("hamburger");  // ezek nem kellenek
+        //let menu = document.getElementById("menu-inner"); 
+
+
+        $("#hamburger").click(function (){
+
+            $("#menu-inner").toggleClass("opened"); 
+            
+        }); 
+
+    </script>
+
+</body>
+</html>
